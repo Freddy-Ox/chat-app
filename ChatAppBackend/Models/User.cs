@@ -1,8 +1,9 @@
+
+
 public class User
 {
-    public string? Role { get; set; }
-    public string? Password { get; set; }
-    public string? Email { get; set; }
-    public string? Name { get; set; }
-    public DateTime CreatedAt { get; set; }
+    public required string Username { get; set; }
+    public required string PasswordHash { get; set; }
+    public DateTime LastOnline { get; set; }
 }
+

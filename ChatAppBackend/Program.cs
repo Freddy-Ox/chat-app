@@ -1,4 +1,7 @@
 using System.Runtime.CompilerServices;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,10 +17,34 @@ builder.Services.AddCors(options =>
                   .AllowAnyHeader();                  
         });
 });
+
+var jwtSettings = builder.Configuration.GetSection("Jwt");
+
+var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]));
+
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtSettings["Issuer"],
+            ValidAudience = jwtSettings["Audience"],
+            IssuerSigningKey = key
+        };
+    });
+
 builder.Services.AddSignalR();
 builder.Services.AddScoped<MessagesRepository>();
 builder.Services.AddScoped<UsersRepository>();
 builder.Services.AddScoped<DatabaseService>();
+builder.Services.AddScoped<PasswordService>();
+builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<LoginService>();
 builder.Services.AddControllers();
 
 var app = builder.Build();

@@ -19,8 +19,8 @@ public class UsersRepository
         connection.Open();
         connection.Execute("PRAGMA foreign_keys = ON;");
 
-        string query = "INSERT INTO Users (Id, Username, PasswordHash, CreatedAt, LastOnline) " +
-                   "VALUES (@Id, @Username, @PasswordHash, @CreatedAt, @LastOnline)";
+        string query = "INSERT INTO Users (Username, PasswordHash, LastOnline) " +
+                   "VALUES (@Username, @PasswordHash, @LastOnline)";
         await connection.ExecuteAsync(query, user);
 
     }

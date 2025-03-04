@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+h4CNbIkf54=",
+  "dgSpecHash": "PszZXmW7ndU=",
   "success": true,
   "projectFilePath": "/Users/frederikokslund/Documents/Programming/Full Stack/Chat App/ChatAppBackend/ChatAppBackend.csproj",
   "expectedPackageFiles": [
     "/Users/frederikokslund/.nuget/packages/dapper/2.1.66/dapper.2.1.66.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.3.0/microsoft.aspnetcore.authentication.abstractions.2.3.0.nupkg.sha512",
+    "/Users/frederikokslund/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.0/microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.aspnetcore.authorization/2.3.0/microsoft.aspnetcore.authorization.2.3.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.aspnetcore.authorization.policy/2.3.0/microsoft.aspnetcore.authorization.policy.2.3.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.aspnetcore.connections.abstractions/2.3.0/microsoft.aspnetcore.connections.abstractions.2.3.0.nupkg.sha512",
@@ -26,6 +27,7 @@
     "/Users/frederikokslund/.nuget/packages/microsoft.aspnetcore.signalr.protocols.json/1.2.0/microsoft.aspnetcore.signalr.protocols.json.1.2.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.aspnetcore.websockets/2.3.0/microsoft.aspnetcore.websockets.2.3.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.aspnetcore.webutilities/2.3.0/microsoft.aspnetcore.webutilities.2.3.0.nupkg.sha512",
+    "/Users/frederikokslund/.nuget/packages/microsoft.bcl.memory/9.0.0/microsoft.bcl.memory.9.0.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.data.sqlite/9.0.2/microsoft.data.sqlite.9.0.2.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.data.sqlite.core/9.0.2/microsoft.data.sqlite.core.9.0.2.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
@@ -38,6 +40,13 @@
     "/Users/frederikokslund/.nuget/packages/microsoft.extensions.objectpool/8.0.11/microsoft.extensions.objectpool.8.0.11.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.extensions.options/8.0.2/microsoft.extensions.options.8.0.2.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/frederikokslund/.nuget/packages/microsoft.identitymodel/7.0.0/microsoft.identitymodel.7.0.0.nupkg.sha512",
+    "/Users/frederikokslund/.nuget/packages/microsoft.identitymodel.abstractions/8.6.0/microsoft.identitymodel.abstractions.8.6.0.nupkg.sha512",
+    "/Users/frederikokslund/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.6.0/microsoft.identitymodel.jsonwebtokens.8.6.0.nupkg.sha512",
+    "/Users/frederikokslund/.nuget/packages/microsoft.identitymodel.logging/8.6.0/microsoft.identitymodel.logging.8.6.0.nupkg.sha512",
+    "/Users/frederikokslund/.nuget/packages/microsoft.identitymodel.protocols/7.0.3/microsoft.identitymodel.protocols.7.0.3.nupkg.sha512",
+    "/Users/frederikokslund/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/7.0.3/microsoft.identitymodel.protocols.openidconnect.7.0.3.nupkg.sha512",
+    "/Users/frederikokslund/.nuget/packages/microsoft.identitymodel.tokens/8.6.0/microsoft.identitymodel.tokens.8.6.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.net.http.headers/2.3.0/microsoft.net.http.headers.2.3.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512",
@@ -50,6 +59,7 @@
     "/Users/frederikokslund/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/system.buffers/4.6.0/system.buffers.4.6.0.nupkg.sha512",
+    "/Users/frederikokslund/.nuget/packages/system.identitymodel.tokens.jwt/8.6.0/system.identitymodel.tokens.jwt.8.6.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/system.net.websockets.websocketprotocol/5.1.0/system.net.websockets.websocketprotocol.5.1.0.nupkg.sha512",
@@ -57,5 +67,16 @@
     "/Users/frederikokslund/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
     "/Users/frederikokslund/.nuget/packages/system.threading.channels/8.0.0/system.threading.channels.8.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.IdentityModel 7.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.IdentityModel",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

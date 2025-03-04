@@ -51,7 +51,7 @@ function App() {
       MessageText: message,
       ChatRoomId: 1,
     };
-
+    console.log("test")
     if (connection && message.trim()) {
       await connection.invoke("SendMessage", username, message);
     }

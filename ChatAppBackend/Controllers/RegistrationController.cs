@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +17,7 @@ public class RegistrationController : Controller
 
     [HttpPost]
     public async Task RegisterUser([FromBody] RegisterUserDto newUser) {
-
+        System.Console.WriteLine(newUser.Password);
         string hashedPW = _pwService.HashPassword(newUser.Password);
 
         User user = new User {Username = newUser.Username, PasswordHash = hashedPW, LastOnline = DateTime.UtcNow};

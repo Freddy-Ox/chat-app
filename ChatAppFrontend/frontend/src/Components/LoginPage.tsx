@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useAuth } from "./AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const { login } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   async function handleLogin(event: React.FormEvent) {
     event.preventDefault();
@@ -14,15 +16,23 @@ export default function LoginPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
-      
+
       if (!response.ok) {
-        throw new Error("invalid username or password")
+        throw new Error("invalid username or password");
       }
 
       const responseData = await response.json();
-      localStorage.setItem("Token", responseData.token)
-      console.log("login succesful")
 
+      if (!responseData.token) {
+        console.log("you've entered incorrect user credentials. try again");
+      }
+
+      if (responseData.token) {
+        localStorage.setItem("Token", responseData.token);        
+        login(username, responseData.token);
+        console.log("login succesful");
+        navigate("/chatroom");
+      }
     } catch (error) {
       if (error instanceof Error) {
         console.log(error.message);
@@ -31,21 +41,32 @@ export default function LoginPage() {
   }
 
   return (
-    <form>
-      <input
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      ></input>
-      <br />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      ></input>
-      <button type="submit" onClick={handleLogin}>
-        Login
-      </button>
-    </form>
+    <div className="flex justify-center items-center min-h-screen">
+      <form className="flex flex-col space-y-4 w-80">
+        <input
+          type="text"
+          placeholder="Enter username..."
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="p-2 border rounded"
+        />
+
+        <input
+          type="password"
+          placeholder="Enter password..."
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="p-2 border rounded"
+        />
+
+        <button
+          type="submit"
+          onClick={handleLogin}
+          className="p-2 bg-blue-500 text-white rounded"
+        >
+          Login
+        </button>
+      </form>
+    </div>
   );
 }

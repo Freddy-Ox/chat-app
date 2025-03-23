@@ -29,7 +29,7 @@ public class LoginService : Controller
         }
 
         var token = _jwtService.GenerateToken(user);
-
+        System.Console.WriteLine(token);
         return new LoginReponseDto {Token = token, Username = loginDto.Username};
     }    
 

@@ -6,6 +6,7 @@ export default function LoginPage() {
   const { login } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loginError, setLoginError] = useState(false);
   const navigate = useNavigate();
 
   async function handleLogin(event: React.FormEvent) {
@@ -25,10 +26,11 @@ export default function LoginPage() {
 
       if (!responseData.token) {
         console.log("you've entered incorrect user credentials. try again");
+        setLoginError(true)
       }
 
       if (responseData.token) {
-        localStorage.setItem("Token", responseData.token);        
+        sessionStorage.setItem("token", responseData.token.token);
         login(username, responseData.token);
         console.log("login succesful");
         navigate("/chatroom");
@@ -36,10 +38,11 @@ export default function LoginPage() {
     } catch (error) {
       if (error instanceof Error) {
         console.log(error.message);
+        
       }
     }
   }
-
+  console.log(loginError)
   return (
     <div className="flex justify-center items-center min-h-screen">
       <form className="flex flex-col space-y-4 w-80">
@@ -66,6 +69,7 @@ export default function LoginPage() {
         >
           Login
         </button>
+        <p className="text-red-500">{loginError ? "You've entered incorrect credentials. Try again." : ""}</p>
       </form>
     </div>
   );
